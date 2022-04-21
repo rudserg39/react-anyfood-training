@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { orderedProductsSelector, totalPriceSelector } from '../../redux/selectors';
 import cn from 'classnames';
 import BasketItem from './basket-item';
 import styles from './basket.module.css';
@@ -24,25 +25,9 @@ const Basket = ({ order, totalPrice }) => {
   );
 };
 
-const mapStateToProps = state => {
-  const products = state.restaurants.flatMap(restaurant => restaurant.menu);
-
-  const order = Object.entries(state.order).map(orderedProduct => {
-    const [orderedProductId, orderedProductsAmount] = orderedProduct;
-    return {
-      product: products.find(product => product.id === orderedProductId),
-      orderedProductsAmount
-    };
-  });
-
-  const totalPrice = order.reduce((acc, curr) => {
-    return acc += curr.product.price * curr.orderedProductsAmount;
-  }, 0);
-
-  return {
-    order,
-    totalPrice
-  };
-};
+const mapStateToProps = state => ({
+  order : orderedProductsSelector(state),
+  totalPrice: totalPriceSelector(state)
+});
 
 export default connect(mapStateToProps)(Basket);
