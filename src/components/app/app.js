@@ -1,20 +1,26 @@
-import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Restaurants from '../restaurants';
 import Header from '../header';
 
-export default class App extends PureComponent {
-  render() {
-    const { restaurants } = this.props;
+const App = ({ restaurants }) => {
 
-    return (
-      <div>
-        <Header />
-        <Restaurants restaurants={restaurants} />
-      </div>
-    );
-  }
-}
+  console.log(restaurants);
+
+  return (
+    <div>
+      <Header />
+      <Restaurants restaurants={restaurants} />
+    </div>
+  );
+
+};
+
+const mapStateToProps = state => ({
+  restaurants: state.restaurants
+});
+
+export default connect(mapStateToProps)(App);
 
 App.propTypes = {
   restaurants: PropTypes.array,

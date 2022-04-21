@@ -1,3 +1,19 @@
 .restaurant {
+  width: 100%;
   padding: 12px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-flow: column;
+  }
+}
+
+.basketWrapper {
+  padding: 24px;
 }

@@ -1,0 +1,35 @@
+.basket {
+  padding: 30px;
+  background-color: #fff0dc;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.title {
+  font-size: 19px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.total {
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+.checkout {
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #e4661d;
+  border-radius: 3px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}

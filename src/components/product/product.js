@@ -11,6 +11,7 @@ function Product({ product, amount, decrement, increment, fetchData }) {
     fetchData?.(product.id);
   }, []); // eslint-disable-line
 
+
   return (
     <div className={styles.product} data-id="product">
       <div className={styles.content}>
