@@ -15,7 +15,7 @@ export const orderedProductsSelector = createSelector([productsSelector, orderSe
   })
 });
 
-export const totalPriceSelector = createSelector([orderSelector], order => order.reduce((acc, curr) => {
+export const totalPriceSelector = createSelector([orderedProductsSelector], orderedProducts => orderedProducts.reduce((acc, curr) => {
   return acc += curr.product.price * curr.orderedProductsAmount;
 }, 0));
 
