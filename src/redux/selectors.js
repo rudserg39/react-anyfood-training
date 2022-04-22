@@ -7,7 +7,7 @@ export const orderedProductsSelector = createSelector([productsSelector, orderSe
   return Object.entries(order).map(orderedProduct => {
     const [orderedProductId, orderedProductsAmount] = orderedProduct;
     return {
-      product: products.find(product => product.id === orderedProductId),
+      product: products[orderedProductId],
       orderedProductsAmount
     };
   })

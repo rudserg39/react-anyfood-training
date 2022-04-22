@@ -1,6 +1,8 @@
 import { normalizedProducts } from '../../fixtures';
 
-export default function (products = normalizedProducts, action) {
+const defaultProducts = normalizedProducts.reduce((acc, product) => ({ ...acc, [product.id]: product}), {});
+
+export default function (products = defaultProducts, action) {
   switch (action) {
     default:
       return products;
