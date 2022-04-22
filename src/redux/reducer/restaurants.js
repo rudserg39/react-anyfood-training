@@ -1,8 +1,8 @@
-import { restaurants } from '../../fixtures';
+import { normalizedRestaurants } from '../../fixtures';
 
-export default function (state = restaurants, action) {
+export default function (restaurants = normalizedRestaurants, action) {
   switch (action) {
     default:
-      return state;
+      return restaurants;
   }
 };

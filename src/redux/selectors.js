@@ -1,9 +1,7 @@
 import { createSelector } from 'reselect';
 
-const restaurantsSelector = state => state.restaurants;
+const productsSelector = state => state.products;
 const orderSelector = state => state.order;
-
-export const productsSelector = createSelector([restaurantsSelector], restaurants => restaurants.flatMap(restaurant => restaurant.menu));
 
 export const orderedProductsSelector = createSelector([productsSelector, orderSelector], (products, order) => {
   return Object.entries(order).map(orderedProduct => {

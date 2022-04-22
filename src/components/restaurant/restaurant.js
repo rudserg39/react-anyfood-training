@@ -15,6 +15,7 @@ const Restaurant = ({ restaurant }) => {
     return Math.round(total / reviews.length);
   }, [reviews]);
 
+
   return (
     <div>
       <Banner heading={name}>

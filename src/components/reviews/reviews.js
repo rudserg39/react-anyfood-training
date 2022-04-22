@@ -3,6 +3,9 @@ import Review from './review';
 import styles from './reviews.module.css';
 
 const Reviews = ({ reviews }) => {
+
+  console.log(reviews)
+
   return (
     <div className={styles.reviews}>
       {reviews.map((review) => (
