@@ -3,18 +3,12 @@ import { connect } from 'react-redux';
 import Restaurants from '../restaurants';
 import Header from '../header';
 
-const App = ({ restaurants }) => {
-
-  console.log(restaurants);
-
-  return (
-    <div>
-      <Header />
-      <Restaurants restaurants={restaurants} />
-    </div>
-  );
-
-};
+const App = ({ restaurants }) => (
+  <div>
+    <Header />
+    <Restaurants restaurants={restaurants} />
+  </div>
+);
 
 const mapStateToProps = state => ({
   restaurants: state.restaurants

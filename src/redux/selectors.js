@@ -17,3 +17,5 @@ export const totalPriceSelector = createSelector([orderedProductsSelector], orde
   return acc += curr.product.price * curr.orderedProductsAmount;
 }, 0));
 
+
+

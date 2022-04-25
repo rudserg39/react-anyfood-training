@@ -13,11 +13,6 @@ function Product({ product, id, amount, decrement, increment, fetchData }) {
     fetchData?.(product.id);
   }, []); // eslint-disable-line
 
-
-  // console.log(store.getState())
-
-  console.log(id)
-
   return (
     <div className={styles.product} data-id="product">
       <div className={styles.content}>
