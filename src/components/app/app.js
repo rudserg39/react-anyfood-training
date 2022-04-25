@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { restaurantsSelector } from '../../redux/selectors';
 import Restaurants from '../restaurants';
 import Header from '../header';
 
@@ -11,7 +12,7 @@ const App = ({ restaurants }) => (
 );
 
 const mapStateToProps = state => ({
-  restaurants: state.restaurants
+  restaurants: restaurantsSelector(state)
 });
 
 export default connect(mapStateToProps)(App);
