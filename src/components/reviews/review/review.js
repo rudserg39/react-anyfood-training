@@ -21,7 +21,7 @@ const Review = ({ id, review, user }) => {
           </p>
         </div>
         <div className={styles.rate}>
-          <Rate value={rating} />
+          <Rate value={rating} isComment={false} />
         </div>
       </div>
     </div>
