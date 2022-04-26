@@ -1,13 +1,16 @@
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Menu from '../menu';
 import Reviews from '../reviews';
 import Banner from '../banner';
 import Rate from '../rate';
 import Basket from '../basket';
+import Tabs from '../tabs';
 import styles from './restaurant.module.css';
 
 const Restaurant = ({ restaurant }) => {
+  const [activeId, setActiveId] = useState('menu');
+
   const { id, name, menu, reviews } = restaurant;
 
   const averageRating = useMemo(() => {
@@ -20,10 +23,15 @@ const Restaurant = ({ restaurant }) => {
       <Banner heading={name}>
         <Rate value={averageRating} />
       </Banner>
+      <Tabs
+        tabs={[{ id: 'menu', label: 'Menu' }, { id: 'reviews', label: 'Reviews' }]}
+        activeId={activeId}
+        onChange={setActiveId}
+      />
       <div className={styles.wrapper}>
         <div className={styles.restaurant}>
-          <Menu key={id} menu={menu} />
-          <Reviews reviews={reviews} />
+          {activeId === 'menu' && <Menu key={id} menu={menu} />}
+          {activeId === 'reviews' && <Reviews reviews={reviews} />}
         </div>
         <div className={styles.basketWrapper}>
           <Basket />

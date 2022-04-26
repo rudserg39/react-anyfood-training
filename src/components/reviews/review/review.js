@@ -30,7 +30,7 @@ const Review = ({ id, review, user }) => {
 
 const mapStateToProps = (state, props) => ({
   review: reviewSelector(state, props),
-  user: userSelector(props)
+  user: userSelector(state, props)
 });
 
 Review.propTypes = {
