@@ -14,6 +14,8 @@
   }
 }
 
-.basketWrapper {
-  padding: 24px;
+.comments {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }

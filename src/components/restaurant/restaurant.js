@@ -6,6 +6,7 @@ import Banner from '../banner';
 import Rate from '../rate';
 import Basket from '../basket';
 import Tabs from '../tabs';
+import Form from '../form';
 import styles from './restaurant.module.css';
 
 const Restaurant = ({ restaurant }) => {
@@ -31,11 +32,14 @@ const Restaurant = ({ restaurant }) => {
       <div className={styles.wrapper}>
         <div className={styles.restaurant}>
           {activeId === 'menu' && <Menu key={id} menu={menu} />}
-          {activeId === 'reviews' && <Reviews reviews={reviews} />}
+          {activeId === 'reviews' &&
+            <div className={styles.comments}>
+              <Reviews reviews={reviews} />
+              <Form />
+            </div>
+          }
         </div>
-        <div className={styles.basketWrapper}>
-          <Basket />
-        </div>
+        <Basket />
       </div>
     </div>
   );
