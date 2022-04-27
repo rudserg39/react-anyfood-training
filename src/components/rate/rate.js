@@ -6,8 +6,8 @@ import { ReactComponent as Star } from '../../icons/star.svg';
 
 import styles from './rate.module.css';
 
-const Rate = ({ value, isComment }) => {
-  const [rating, setRating] = useState(0);
+const Rate = ({ value, isComment, review, setReview }) => {
+  const [rating, setRating] = useState(1);
 
   return (
     <div>
@@ -16,7 +16,7 @@ const Rate = ({ value, isComment }) => {
           key={i}
           data-id={i <= value - 1 ? 'full-star' : 'empty-star'}
           className={cn(styles.star, { [styles.checked]: !isComment ? i <= value - 1 : i <= rating - 1 }, isComment && styles.cursor)}
-          onClick={() => setRating(i + 1)}
+          onClick={() => { setRating(i + 1); setReview({ ...review, rating: i + 1 }) }}
         />
       ))}
     </div>

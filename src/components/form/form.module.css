@@ -17,6 +17,10 @@
   font-weight: 600;
 }
 
+.name {
+  margin-bottom: 24px;
+}
+
 .textarea {
   width: 50%;
   height: 100px;
